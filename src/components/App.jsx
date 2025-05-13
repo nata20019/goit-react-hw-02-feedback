@@ -16,10 +16,12 @@ export const App = () => {
       }}
     >
       React homework template
-      <Section title="Please leave feedback" />
-      <FeedbackOptions />
-      <Section title="Statistics" />
-      <Statistics />
+      <Section title="Please leave feedback">
+        <FeedbackOptions />
+      </Section>
+      <Section title="Statistics">
+        <Statistics />
+      </Section>
     </div>
   );
 };

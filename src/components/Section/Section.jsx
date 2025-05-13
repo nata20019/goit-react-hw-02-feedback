@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types';
 
-const Section = ({ title }) => {
+const Section = ({ title, children }) => {
   return (
-    <div className="name">
-      <section className="section">
-        <h2 className="title">{title}</h2>
-      </section>
-    </div>
+    <section className="section">
+      <h2 className="title">{title}</h2>
+      {children}
+    </section>
   );
 };
 Section.propTypes = {
