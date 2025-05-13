@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import Button from 'react-bootstrap/Button';
+import PropTypes from 'prop-types';
 
 const feedbackMap = [
   { id: 'good', title: 'Good' },
@@ -8,17 +9,13 @@ const feedbackMap = [
 ];
 
 export class FeedbackOptions extends Component {
-  state = {
-    good: 0,
-    neutral: 0,
-    bad: 0,
+  static propTypes = {
+    onLeaveFeedback: PropTypes.func.isRequired,
   };
 
-  handleClick = e => {
+  handleFeedback = e => {
     const { title } = e.target;
-    this.setState(prevState => ({
-      [title]: prevState[title] + 1,
-    }));
+    this.props.onLeaveFeedback(title.toLowerCase());
   };
 
   render() {
@@ -31,6 +28,7 @@ export class FeedbackOptions extends Component {
             key={feedback.id}
             type="button"
             className="btn"
+            title={feedback.title}
           >
             {feedback.title}
           </Button>
