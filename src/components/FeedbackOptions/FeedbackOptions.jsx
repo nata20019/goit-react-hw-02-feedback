@@ -13,11 +13,20 @@ export class FeedbackOptions extends Component {
     neutral: 0,
     bad: 0,
   };
+
+  handleClick = e => {
+    const { title } = e.target;
+    this.setState(prevState => ({
+      [title]: prevState[title] + 1,
+    }));
+  };
+
   render() {
     return (
       <div className="btn-group" role="group" aria-label="Basic example">
         {feedbackMap.map(feedback => (
           <Button
+            onClick={this.handleClick}
             variant="primary"
             key={feedback.id}
             type="button"
