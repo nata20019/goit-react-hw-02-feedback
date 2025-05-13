@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import Button from 'react-bootstrap/Button';
 
 const feedbackMap = [
   { id: 'good', title: 'Good' },
@@ -16,19 +17,15 @@ export class FeedbackOptions extends Component {
     return (
       <div className="btn-group" role="group" aria-label="Basic example">
         {feedbackMap.map(feedback => (
-          <button key={feedback.id} type="button" className="btn">
+          <Button
+            variant="primary"
+            key={feedback.id}
+            type="button"
+            className="btn"
+          >
             {feedback.title}
-          </button>
+          </Button>
         ))}
-        {/* <button type="button" className="btn btn-good">
-          Good
-        </button>
-        <button type="button" className="btn btn-neutral">
-          Neutral
-        </button>
-        <button type="button" className="btn btn-bad">
-          Bad
-        </button> */}
       </div>
     );
   }
