@@ -18,23 +18,23 @@ export class Statistics extends Component {
         <ul className="w-list">
           <li className="list" key="good">
             <p className="list-element">Good:</p>
-            <span className="value">{good}</span>
+            <span className="value">{good || 0}</span>
           </li>
           <li className="list" key="neutral">
             <p className="list-element">Neutral:</p>
-            <span className="value">{neutral}</span>
+            <span className="value">{neutral || 0}</span>
           </li>
           <li className="list" key="bad">
             <p className="list-element">Bad:</p>
-            <span className="value">{bad}</span>
+            <span className="value">{bad || 0}</span>
           </li>
           <li className="list" key="total">
             <p className="list-element">Total:</p>
-            <span className="value">{total}</span>
+            <span className="value">{total || 0}</span>
           </li>
           <li className="list" key="positive">
             <p className="list-element">Positive Percentage:</p>
-            <span className="value">{positivePercentage}%</span>
+            <span className="value">{positivePercentage || 0}%</span>
           </li>
         </ul>
       </div>
