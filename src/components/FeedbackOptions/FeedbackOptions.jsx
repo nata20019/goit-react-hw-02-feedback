@@ -23,7 +23,7 @@ export class FeedbackOptions extends Component {
       <div className="btn-group" role="group" aria-label="Basic example">
         {feedbackMap.map(feedback => (
           <Button
-            onClick={this.handleClick}
+            onClick={this.handleFeedback}
             variant="primary"
             key={feedback.id}
             type="button"
