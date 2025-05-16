@@ -7,8 +7,12 @@ export class Phonebook extends Component {
     name: '',
     number: '',
   };
-  handleChangeName = e => this.setState({ name: e.target.value });
-  handleChangeNumber = e => this.setState({ number: e.target.value });
+
+  handleChange = e => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  };
+
   handleSubmit = e => {
     e.preventDefault();
     console.log(this.state);
@@ -27,7 +31,7 @@ export class Phonebook extends Component {
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             required
-            onChange={this.handleChangeName}
+            onChange={this.handleChange}
           />
           <div id="emailHelp" className="form-text"></div>
         </div>
@@ -41,7 +45,7 @@ export class Phonebook extends Component {
             className="form-control"
             id="exampleInputPassword1"
             required
-            onChange={this.handleChangeNumber}
+            onChange={this.handleChange}
           />
         </div>
         <button
