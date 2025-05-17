@@ -2,7 +2,6 @@ import { Component } from 'react';
 import Statistics from './Statistics/Statistics';
 import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
 import Section from './Section/Section';
-import Phonebook from './Phonebook/Phonebook';
 
 export class App extends Component {
   state = {
@@ -61,9 +60,6 @@ export class App extends Component {
               positivePercentage={positivePercentage}
             />
           )}
-        </Section>
-        <Section title="Phonebook">
-          <Phonebook />
         </Section>
       </div>
     );
